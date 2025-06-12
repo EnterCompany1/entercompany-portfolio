@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',  // Darker blue
+                        secondary: '#10b981', // Keep the green
+                        accent: '#3b82f6',    // Bright blue accent
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(13, 35, 97, 0.95) 0%, rgba(5, 87, 60, 0.9) 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .floating-btn {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+    <!-- Favicon general -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- Para Apple y Android -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body class="font-sans text-dark bg-light">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="enterlogo.jpeg" alt="Logo Enter Company" class="h-10 w-auto mr-2">
+                <span class="text-xl font-bold text-green-800">Enter<b class="text-primary">Company</b></span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#servicios" class="font-medium hover:text-primary transition">Servicios</a></li>
+                    <li><a href="#portfolio" class="font-medium hover:text-primary transition">Portfolio</a></li>
+                    <li><a href="#nosotros" class="font-medium hover:text-primary transition">Nosotros</a></li>
+                    <li><a href="#contacto" class="font-medium hover:text-primary transition">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#contacto" class="bg-primary text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition md:ml-8">Solicitá tu presupuesto</a>
+            <button class="md:hidden text-dark" id="menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden bg-white border-t md:hidden">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#servicios" class="font-medium hover:text-primary transition">Servicios</a>
+                <a href="#portfolio" class="font-medium hover:text-primary transition">Portfolio</a>
+                <a href="#nosotros" class="font-medium hover:text-primary transition">Nosotros</a>
+                <a href="#contacto" class="font-medium hover:text-primary transition">Contacto</a>
+                <a href="#contacto" class="bg-primary text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition text-center">Solicitá tu presupuesto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-20 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Hacé crecer tu negocio</h1>
+                <p class="text-xl mb-8 opacity-90">Somos una agencia especializada en transformar negocios utilizando marketing digital, diseño y tecnología.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contacto" class="bg-white text-primary px-6 py-3 rounded-full font-bold text-center hover:bg-white/90 transition shadow-lg hover:shadow-xl">Solicitá tu presupuesto</a>
+                    <a href="#contacto" class="bg-accent text-white px-6 py-3 rounded-full font-bold text-center hover:bg-blue-600 transition shadow-lg hover:shadow-xl ml-4">Agenda una llamada</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Equipo trabajando" class="rounded-lg shadow-2xl max-w-md w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Nuestros servicios digitales</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Soluciones personalizadas para cada etapa de crecimiento de tu negocio</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-ad text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Publicidad Digital</h3>
+                    <p class="text-gray-600 mb-6">Creamos campañas publicitarias en Google, Facebook, Instagram y LinkedIn para que llegues a tu cliente ideal con el mensaje correcto.</p>
+                    <a href="#contacto" class="text-primary font-medium flex items-center">
+                        Más información <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Servicio 2 -->
+                <div class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Diseño Web</h3>
+                    <p class="text-gray-600 mb-6">Desarrollamos sitios web profesionales, rápidos y optimizados para conversiones que generan confianza y ventas para tu marca.</p>
+                    <a href="#contacto" class="text-secondary font-medium flex items-center">
+                        Más información <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Servicio 3 -->
+                <div class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hashtag text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Redes Sociales</h3>
+                    <p class="text-gray-600 mb-6">Gestionamos tu presencia en redes sociales con contenido estratégico que aumenta engagement y construye comunidad.</p>
+                    <a href="#contacto" class="text-primary font-medium flex items-center">
+                        Más información <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Servicio 4 -->
+                <div class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Branding Corporativo</h3>
+                    <p class="text-gray-600 mb-6">Diseñamos identidades visuales únicas que comunican los valores de tu marca y destacan en un mercado competitivo.</p>
+                    <a href="#contacto" class="text-secondary font-medium flex items-center">
+                        Más información <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Servicio 5 -->
+                <div class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-envelope text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Email Marketing</h3>
+                    <p class="text-gray-600 mb-6">Estrategias de email marketing automatizadas que convierten suscriptores en clientes leales y recurrentes.</p>
+                    <a href="#contacto" class="text-primary font-medium flex items-center">
+                        Más información <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Servicio 6 -->
+                <div class="service-card bg-white p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-analytics text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Análisis de Datos</h3>
+                    <p class="text-gray-600 mb-6">Interpretamos los datos de tu negocio para tomar decisiones inteligentes y maximizar tus resultados digitales.</p>
+                    <a href="#contacto" class="text-secondary font-medium flex items-center">
+                        Más información <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Algunos de nuestros trabajos</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Resultados comprobables que generamos para nuestros clientes</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Proyecto 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <i class="fas fa-store-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ecommerce de ropa</h3>
+                        <p class="text-gray-600 mb-4">Rediseño de tienda online y estrategia de marketing para marca de moda.</p>
+                        <div class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium inline-block">+350% en ventas</div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-blue-400 flex items-center justify-center">
+                        <i class="fas fa-utensils text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cadena de restaurantes</h3>
+                        <p class="text-gray-600 mb-4">Campañas locales en Google Ads y redes sociales para franquicia gastronómica.</p>
+                        <div class="bg-secondary bg-opacity-10 text-secondary px-3 py-1 rounded-full text-sm font-medium inline-block">2.5X ROI publicitario</div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                    <div class="h-48 bg-gradient-to-r from-primary to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Institución educativa</h3>
+                        <p class="text-gray-600 mb-4">Estrategia de captación de alumnos + automatización de marketing.</p>
+                        <div class="bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm font-medium inline-block">+120% leads calificados</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-8 shadow-md mb-16">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-bold text-primary mb-2">40+</div>
+                        <p class="text-gray-600">Clientes satisfechos</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-secondary mb-2">350%</div>
+                        <p class="text-gray-600">Incremento promedio</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                        <p class="text-gray-600">Campañas activas</p>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-secondary mb-2">24/7</div>
+                        <p class="text-gray-600">Soporte al cliente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Lo que dicen nuestros clientes</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Empresas que confiaron en nosotros y hoy ven resultados</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-primary">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Martina Gutiérrez</h4>
+                            <p class="text-gray-600 text-sm">Dueña, Tienda de productos de belleza</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Desde que DigitalGrowth comenzó a administrar nuestras redes sociales y publicidad, nuestras ventas online aumentaron un 270% en solo 4 meses. Su equipo es profesional, proactivo y realmente entiende nuestro negocio."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl border-l-4 border-secondary">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-secondary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-secondary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos Morales</h4>
+                            <p class="text-gray-600 text-sm">Dueño de cafetería</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"El nuevo sitio web que desarrollaron superó todas nuestras expectativas. No solo es hermoso, sino que la tasa de conversión aumentó un 180% desde el primer mes. Además, su estrategia de marketing digital nos permitió duplicar nuestras matrículas en el último trimestre."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold mb-6">Nuestra historia y enfoque</h2>
+                    <p class="text-gray-600 mb-6">Enter Company nació con la misión de ayudar a empresas a competir en el mundo digital con estrategias accesibles y resultados medibles.</p>
+                    <p class="text-gray-600 mb-6">Creemos en la transparencia, la medición rigurosa de resultados y en construir relaciones a largo plazo con nuestros clientes. No somos solo una agencia, somos tu socio de crecimiento digital.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-primary text-sm"></i>
+                            </div>
+                            <span class="font-medium">Equipo multidisciplinario con más de 15 años de experiencia combinada</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-primary text-sm"></i>
+                            </div>
+                            <span class="font-medium">Enfoque basado en datos y resultados</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-primary text-sm"></i>
+                            </div>
+                            <span class="font-medium">Metodología ágil y adaptada a cada negocio</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Equipo DigitalGrowth" class="rounded-xl shadow-lg w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Hablemos de tu proyecto</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Completá el formulario y nos pondremos en contacto en menos de 24 horas</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-gray-50 rounded-xl p-8 shadow-sm">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Tu nombre">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="tu@email.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono (opcional)</label>
+                        <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="+54 11 1234-5678">
+                    </div>
+                    <div>
+                        <label for="services" class="block text-sm font-medium text-gray-700 mb-1">Servicio de interés</label>
+                        <select id="services" name="services" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition">
+                            <option value="">Seleccionar servicio...</option>
+                            <option value="publicidad">Publicidad Digital</option>
+                            <option value="web">Diseño Web</option>
+                            <option value="redes">Redes Sociales</option>
+                            <option value="branding">Branding</option>
+                            <option value="email">Email Marketing</option>
+                            <option value="otros">Otros servicios</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="Cuéntanos sobre tu proyecto"></textarea>
+                    </div>
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-primary text-white px-6 py-4 rounded-lg font-bold hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                            Enviar consulta
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/5492235236741" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg floating-btn hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center mb-6">
+                     
+                        <span class="text-xl font-bold text-green-800">Enter<b class="text-primary">Company</b></span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Ayudamos a empresas a crecer utilizando estratégicamente herramientas digitales.</p>
+                   <div class="flex space-x-4">
+    <a href="https://www.facebook.com/miempresa" target="_blank" class="text-gray-400 hover:text-white transition">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/miempresa" target="_blank" class="text-gray-400 hover:text-white transition">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/company/companyenter/" target="_blank" class="text-gray-400 hover:text-white transition">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://twitter.com/miempresa" target="_blank" class="text-gray-400 hover:text-white transition">
+        <i class="fab fa-twitter"></i>
+    </a>
+</div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Servicios</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Publicidad Digital</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Diseño Web</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Redes Sociales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Branding</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Email Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Empresa</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sobre Nosotros</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Equipo</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Trabajá con Nosotros</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contacto</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gray-400 mt-1 mr-2"></i>
+                            <span class="text-gray-400">Argentina</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">+54 2235236741</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">entercompany0.1@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 EnterCompany. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For this example, we'll just show an alert
+            alert('Gracias por tu mensaje. Nos pondremos en contacto contigo muy pronto.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
